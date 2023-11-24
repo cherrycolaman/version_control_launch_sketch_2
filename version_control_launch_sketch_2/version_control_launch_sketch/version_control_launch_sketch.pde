@@ -10,6 +10,9 @@ void draw(){
   for (int j = 0; j < particles.size(); j++){
     particles.get(j).update();
     particles.get(j).display();
+    if (particles.get(j).position.y > height){
+      particles.remove(0);
+    }
   }
   if(mousePressed == true) {
     particles.add(new Particle(mouseX, mouseY));
